@@ -4,16 +4,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./output.css" rel="stylesheet">
+        <script defer
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
-    <body class="font-serif">
-        <h1 class="silkscreen-bold ">
-            Ciao!
-        </h1>
-        <h1 class="testo-gigantesco">
-            Ciao!
-        </h1>
-        <h1 class="testo-gigantesco">
-            Ciao!
-        </h1>
+    <body>
+
+        <section class="qualcoa" x-data="{ open: false }">
+            <h2>Playground di esempio</h2>
+            <div class="border-2 p-5 rounded ">
+                <button @click="open = !open"
+                    class="text-white border hover:cursor-pointer hover:bg-indigo-500 p-2 rounded-lg shadow bg-indigo-300"
+                    type="button">Mostra/Nascondi</button>
+            </div>
+            <p class="block">Sono un testo visibile</p>
+            <p x-show="open">Sono un testo non visibile</p>
+        </section>
+        <hr>
+        <section>
+            <div x-data="{ count: 0 }">
+                <button x-on:click="count++">Increment</button>
+
+                <span x-text="count"></span>
+            </div>
+        </section>
     </body>
 </html>
