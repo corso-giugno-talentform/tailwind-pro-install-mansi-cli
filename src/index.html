@@ -20,12 +20,14 @@
             <p x-show="open">Sono un testo non visibile</p>
         </section>
         <hr>
-        <section>
-            <div x-data="{ count: 0 }">
-                <button x-on:click="count++">Increment</button>
+        <div x-data="{ red: false }">
+            <button type="button"
+                class="text-white border hover:cursor-pointer hover:bg-indigo-500 p-2 rounded-lg shadow bg-indigo-300"
+                @click="red = true">Cambia in Rosso</button>
+            <p class="text-2xl" x-bind:class="red ? 'text-red-500' : ''"
+                x-text="red ? 'Sono un testo rosso' : 'Sono un testo nero'"></p>
 
-                <span x-text="count"></span>
-            </div>
-        </section>
+            <!-- <input :type="isPassword? 'password' : 'text'" name="" id=""> -->
+        </div>
     </body>
 </html>
